@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newzyra - Your Trusted News Source</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .news-ticker {
+            animation: ticker 20s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .cookie-banner {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .ad-container {
+            position: sticky;
+            top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .content-ad-wrapper {
+                flex-direction: column;
+            }
+            .ad-container {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-indigo-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="/" class="text-2xl font-bold">Newzyra</a>
+                <div id="datetime" class="text-sm"></div>
+                <button id="darkModeToggle" class="p-2 rounded-full hover:bg-indigo-700">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
+            </div>
+            
+            <!-- News Ticker -->
+            <div class="overflow-hidden py-2 bg-indigo-700">
+                <div class="news-ticker whitespace-nowrap">
+                    Breaking News: Latest updates and headlines from around the world...
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="py-4">
+                <ul class="flex space-x-6 overflow-x-auto">
+                    <li><a href="#latest" class="hover:text-indigo-200">Latest News</a></li>
+                    <li><a href="#technology" class="hover:text-indigo-200">Technology</a></li>
+                    <li><a href="#stories" class="hover:text-indigo-200">Stories</a></li>
+                    <li><a href="#sports" class="hover:text-indigo-200">Sports</a></li>
+                    <li><a href="#realestate" class="hover:text-indigo-200">Real Estate</a></li>
+                    <li><a href="#entertainment" class="hover:text-indigo-200">Entertainment</a></li>
+                    <li><a href="#education" class="hover:text-indigo-200">Education</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl font-bold mb-4">Welcome to Newzyra</h1>
+                    <p class="text-xl">Your trusted source for the latest news and updates</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://source.unsplash.com/random/800x600?news" alt="News" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Content Area (75%) -->
+            <div class="lg:w-3/4">
+                <!-- News Sections -->
+                <section id="latest" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6">Latest News</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- News Cards -->
+                    </div>
+                </section>
+
+                <!-- Repeat similar sections for Technology, Stories, Sports, etc. -->
+            </div>
+
+            <!-- Advertisement Area (25%) -->
+            <aside class="lg:w-1/4">
+                <div class="ad-container bg-white p-4 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">Sponsored Content</h3>
+                    <!-- Ad content -->
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About Newzyra</h3>
+                    <p>Your trusted source for the latest news and updates from around the world.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-indigo-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-indigo-400">Contact</a></li>
+                        <li><a href="#" class="hover:text-indigo-400">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-indigo-400"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="hover:text-indigo-400"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="hover:text-indigo-400"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p>&copy; 2024 Newzyra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            <button id="acceptCookies" class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700">Accept</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Date/Time Display
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('datetime').textContent = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Cookie Banner
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptCookies = document.getElementById('acceptCookies');
+
+        if (!localStorage.getItem('cookiesAccepted')) {
+            cookieBanner.style.display = 'block';
+        }
+
+        acceptCookies.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieBanner.style.display = 'none';
+        });
+
+        // Initialize Swiper
+        new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fetch and display news
+        async function fetchNews() {
+            try {
+                const response = await fetch('https://r0c8kgwocscg8gsokogwwsw4.zetaverse.one/mongodb', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer GkrqosbrsAPJXAJZWe5jAnTakgD2',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        appSlug: 'newzyra-news-123456',
+                        action: 'read',
+                        collection: 'news',
+                        conditions: {}
+                    })
+                });
+                const data = await response.json();
+                // Update UI with news data
+            } catch (error) {
+                console.error('Error fetching news:', error);
+            }
+        }
+
+        // Initial load
+        fetchNews();
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
